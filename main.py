@@ -1,12 +1,9 @@
 import pandas as pd
-from pathlib import Path
+import os
 
 # Get CSV files in the data folder
-data_folder = Path("data")
-
-# Read each CSV file
-file_paths = ["daily_sales_data_0.csv", "daily_sales_data_1.csv", "daily_sales_data_2.csv"]
-dfs = [pd.read_csv(data_folder / file) for file in file_paths]
+DATA_DIRECTORY = "./data"
+dfs = [pd.read_csv(f"{DATA_DIRECTORY}/{file_name}") for file_name in os.listdir(DATA_DIRECTORY)]
 
 # Step 2: Filter rows where "product" is "pink morsel"
 filtered_dfs = [df[df['product'] == 'pink morsel'] for df in dfs]
@@ -22,4 +19,4 @@ formatted_dfs = [df[['sales', 'date', 'region']] for df in filtered_dfs]
 final_df = pd.concat(formatted_dfs, ignore_index=True)
 
 # Step 6: Save the final output to a new CSV file
-final_df.to_csv("output.csv", index=False)
+final_df.to_csv("output2.csv", index=False)
