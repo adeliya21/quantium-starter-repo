@@ -37,4 +37,3 @@ dash_app.layout = html.Div(
 # this is only true if the module is executed as the program entrypoint
 if __name__ == '__main__':
     dash_app.run_server()
-    
