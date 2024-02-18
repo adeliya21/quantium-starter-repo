@@ -47,7 +47,7 @@ def generate_figure(chart_data):
     return line_chart
 
 visualization = dcc.Graph(
-    id='visaulizaion',
+    id='visualizaion',
     figure=generate_figure(data)
 )
 
