@@ -52,3 +52,7 @@ def test_003_region_picker_exists(dash_duo):
 # If chromedriver was successfully added to PATH variable, you should get a message like this: 'ChromeDriver XXX.X.XXXX.XXXX'
 
 # 8. Run 'pytest' command to run all the files in current directory starting or ending with 'test'
+    
+# 9. Close chromedriver
+# lsof -i :9515
+# killall chromedriver
